@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "browserify": "^13.1.0",
+    "browserify-shim": "^3.8.12",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.8.1",
+    "partialify": "^3.1.6",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.1.1"
+  },
+  "browserify-shim": "./public/resources/javascript/shim.js",
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "bootstrap": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
+}

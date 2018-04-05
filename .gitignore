@@ -1,0 +1,5 @@
+vendor/
+.DS_STORE
+compiled/
+.sass-cache/
+node_modules

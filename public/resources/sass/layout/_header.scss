@@ -1,0 +1,10 @@
+.header {
+    background: url(/resources/img/triangle.png);
+    background-size: cover;
+
+    h1 {
+        font-family: $font-family-cursive;    
+        font-size: $font-size-h1;
+        color: $gray-dark;
+    }
+}

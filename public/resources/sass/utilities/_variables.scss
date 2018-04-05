@@ -1,0 +1,37 @@
+//== Colours
+
+$palette: (
+    mine-shaft: #333333,
+    tundora: #444444,
+    boulder: #777777,
+    gallery: #EDEDED
+);
+
+@function palette($color) {
+    @return map-get($palette, $color);
+}
+
+$gray-light:    palette('gallery');
+$gray-base:     palette('boulder');
+$gray-dark:     palette('tundora');
+$gray-darker:   palette('mine-shaft');
+
+$body-bg:       #FFFFFF;
+$text-color:    $gray-darker;
+
+//== Typography
+
+$font-family-sans-serif:    "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:         'PT Serif', serif !default;
+$font-family-cursive:       'Lobster', cursive;
+
+$font-size-base:          15px;
+$font-size-large:         18px;
+$font-size-small:         14px;
+
+$font-size-h1:            48px;
+$font-size-h2:            36px;
+$font-size-h3:            24px;
+$font-size-h4:            18px;
+$font-size-h5:            $font-size-base;
+$font-size-h6:            14px;
