@@ -20,6 +20,5 @@ function episode_sort($a, $b) {
 }
 usort($data, "episode_sort");
 
-
 //Render the template
 echo $twig->render('page.html', ["episodes" => $data]);
