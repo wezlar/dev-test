@@ -10,7 +10,6 @@ $client = new GuzzleHttp\Client();
 $res = $client->request('GET', 'http://3ev.org/dev-test-api/');
 $data = json_decode($res->getBody(), true);
 
-
 //Sort the episodes
 function episode_sort($a, $b) {
   if ($a['season'] == $b['season']) {
