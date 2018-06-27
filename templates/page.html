@@ -14,14 +14,30 @@
       </div>
     </div>
 
+    {% if seasons|length > 1 %}
+        <div class="container" id="filter" style="margin-bottom: 20px;">
+            <a href="/#filter" class="btn btn-primary">View all</a>
+            {% for season in seasons %}
+                <a href="/?filter={{ season }}#filter" class="btn {% if season == filter %}btn-success{% else %}btn-primary{% endif %}">Season {{ season }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
     <div class="container">
-        {% for episode in episodes %}
-            {% if loop.index%2 == 1 %}<div class="row">{%endif %}
 
-                {{ include('episode.html') }}
-        
-            {% if loop.index%2 == 0 %}</div>{%endif %}
+        {% set displayCount = 1 %}
+        {% for episode in episodes %}
+            {% if filter == episode.season or filter == '' %}
+                {% if displayCount%2 == 1 %}<div class="row">{% endif %}
+
+                    {{ include('episode.html') }}
+
+                {% if displayCount%2 == 0 %}</div>{% endif %}
+                {% set displayCount = (displayCount + 1) %}
+            {% endif %}
         {% endfor %}
+        {% if displayCount == 1 %}
+          <div class="no-episodes">There are no episodes for season {{ filter }}.</div>
+        {% endif %}
     </div>
 
     <footer class="footer">

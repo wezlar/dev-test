@@ -13,5 +13,11 @@ $data = json_decode($res->getBody(), true);
 //Sort the episodes
 array_multisort(array_keys($data), SORT_ASC, SORT_STRING, $data);
 
+// get list of unique seasons for filter
+$seasons = array_unique(array_column($data, 'season'));
+
+//Get filter
+$filter = isset($_GET['filter']) ? $_GET['filter'] : '';
+
 //Render the template
-echo $twig->render('page.html', ["episodes" => $data]);
+echo $twig->render('page.html', ["episodes" => $data, "seasons" => $seasons, "filter" => $filter]);
