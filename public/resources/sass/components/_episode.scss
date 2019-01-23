@@ -1,7 +1,20 @@
 .episode {
     p {
         font-family: 'PT Serif', serif;
-        font-size: 15px;
-        line-height: 25px;            
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    .media-left,
+    .media-body {
+      padding-bottom: 20px;
+    }
+
+    .media-heading {
+      font-weight: bold;
+
+      i {
+        color: #777;
+      }
     }
 }
