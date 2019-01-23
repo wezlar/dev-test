@@ -1,8 +1,8 @@
 .episode {
     p {
         font-family: 'PT Serif', serif;
-        font-size: 13px;
-        line-height: 22px;
+        font-size: 15px;
+        line-height: 25px;
     }
 
     .media-left,
@@ -17,4 +17,8 @@
         color: #777;
       }
     }
+}
+
+.no-episodes {
+  margin-bottom: 20px;
 }

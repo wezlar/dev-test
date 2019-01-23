@@ -28,8 +28,13 @@ if(file_exists($file_name) && ($current_time - $expire_time < $file_time)) {
   }
 }
 
-//Render the template
-echo $twig->render('page.html', ["episodes" => $data, "error" => $error]);
+// get list of unique seasons for filter
+$seasons = array_unique(array_column($data, 'season'));
 
-  
+//Get filter
+$filter = isset($_GET['filter']) ? $_GET['filter'] : '';
+
+//Render the template
+echo $twig->render('page.html', ["episodes" => $data, "error" => $error, "seasons" => $seasons, "filter" => $filter]);
+
 $error = '';
