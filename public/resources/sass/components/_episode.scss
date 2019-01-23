@@ -4,6 +4,19 @@
         font-size: 15px;
         line-height: 25px;
     }
+
+    .media-left,
+    .media-body {
+      padding-bottom: 20px;
+    }
+
+    .media-heading {
+      font-weight: bold;
+
+      i {
+        color: #777;
+      }
+    }
 }
 
 .no-episodes {

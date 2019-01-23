@@ -23,8 +23,10 @@
         </div>
     {% endif %}
     <div class="container">
-
         {% set displayCount = 1 %}
+        {% if error != '' %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {%endif %}
         {% for episode in episodes %}
             {% if filter == episode.season or filter == '' %}
                 {% if displayCount%2 == 1 %}<div class="row">{% endif %}
@@ -34,6 +36,8 @@
                 {% if displayCount%2 == 0 %}</div>{% endif %}
                 {% set displayCount = (displayCount + 1) %}
             {% endif %}
+
+            {% if loop.index%2 == 0 %}</div>{%endif %}
         {% endfor %}
         {% if displayCount == 1 %}
           <div class="no-episodes">There are no episodes for season {{ filter }}.</div>
